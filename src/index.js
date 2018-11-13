@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Index = () => {
-  return <div>Hello React!</div>;
-};
+const IEXTrader = () => (
+  <div></div>
+);
 
-ReactDOM.render(<Index />, document.getElementById("app-root"));
+ReactDOM.render(<IEXTrader />, document.getElementById("app-root"));
