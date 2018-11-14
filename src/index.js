@@ -1,8 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import initStore from './init/initStore';
+import { Provider } from 'react-redux';
+import marketsReducer from './reducers/MarketsReducer';
+import AppRouter from './router/AppRouter';
 
-const IEXTrader = () => (
-  <div></div>
+export const store = initStore({
+  marketsReducer,
+  
+});
+
+ReactDOM.render(
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>,
+     document.getElementById("app-root")
 );
-
-ReactDOM.render(<IEXTrader />, document.getElementById("app-root"));
