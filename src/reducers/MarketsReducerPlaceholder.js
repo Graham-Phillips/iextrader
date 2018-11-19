@@ -1,4 +1,5 @@
 import isDefined from '../utils/isDefined';
+import ActionConstants from '../ActionConstants';
 
 const MARKET_ITEMS_INITIAL_STATE = {
 	//isFetching: false,
@@ -7,22 +8,22 @@ const MARKET_ITEMS_INITIAL_STATE = {
 
 function createMarketDataItems(state, response)
 {
-    //TODO
+	//TODO
 }
 
 export default function marketsReducerPlaceholder(state = MARKET_ITEMS_INITIAL_STATE, action) {
 	switch (action.type)
 	{
-		case MyPromotionsActions.GET_PROMO_ITEMS_SUCCESS:
-		{
-			const { response } = action.payload;
+	case ActionConstants.FILTER_MARKETS:
+	{
+		const { response } = action.payload;
 
-			return Object.assign({}, state, {
-				isFetching: false,
-				items: createMarketDataItems(state, response.items),
-			});
-		}
-		default:
-			return state;
+		return Object.assign({}, state, {
+			isFetching: false,
+			items: createMarketDataItems(state, response.items),
+		});
+	}
+	default:
+		return state;
 	}
 }
